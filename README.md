@@ -94,6 +94,10 @@ The app uses two databases: one online and one offline.
 
 - **Online Database**: Uses Firebase Realtime Database for real-time updates.
   ![Online Database Schema](#)
+  
+- **Offline Database**: Stores data locally for offline access and faster performance.
+  ![Offline Database Schema](#)
+  
 
 
 Installation
@@ -118,6 +122,3 @@ Authors and history
 
 Acknowledgments
 ---------------
-
-- **Offline Database**: Stores data locally for offline access and faster performance.
-  ![Offline Database Schema](#)
