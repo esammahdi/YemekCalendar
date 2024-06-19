@@ -3,21 +3,45 @@
 ### 🍽️ **A Monthly Food Menu Application**
 This application, built using Jetpack Compose, provides an intuitive and visually appealing way to browse and manage monthly food menus for selected institutions. Detailed overview of its features and capabilities are below.
 
-![Android](https://img.shields.io/badge/android-green)
-![Kotlin](https://img.shields.io/badge/kotlin-grey)
-![minSdk](https://img.shields.io/badge/minSdk-28-green)
-![targetSdk](https://img.shields.io/badge/targetSdk-34-blue)
+[![License](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
+[![Latest release](http://img.shields.io/badge/beta-0.1.0-blue.svg?style=flat-square)](./)
+[![minSdk](https://img.shields.io/badge/minSdk-28-green.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
+[![targetSdk](http://img.shields.io/badge/targetSdk-34-blue.svg?style=flat-square)](./)
 
-
-<p>
-  <img src="resources/Screenshot_1.png" width="250" />
-  <img src="resources/Screenshot_2.png" width="250" />
-  <img src="resources/Screenshot_3.png" width="250" />
+<p align="center">
+<a href="https://www.android.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/android/android-official.svg" alt="flutter" width="100" height="60"/> </a>
+<a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-ar21.svg" alt="dart" width="100" height="60"/> </a>   
+<a href="https://kotlinlang.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-ar21.svg" alt="kotlin" width="100" height="60"/> </a>
+<a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg" alt="flutter" width="100" height="60"/> </a> 
+<a href="https://dagger.dev/hilt/" target="_blank" rel="noreferrer"> <img src="screenshots/dagger_hilt" alt="Android Dagger Hilt Library" width="100" height="60"/> </a> 
+<a href="https://developer.android.com/jetpack/androidx/releases/room" target="_blank" rel="noreferrer"> <img src="screenshots/room.svg" alt="Android Room Database" width="100" height="60"/> </a> 
+<a href="https://developer.android.com/jetpack/guide#recommended-app-arch" target="_blank" rel="noreferrer"> <img src="screenshots/mvvm.svg" alt="MVVM architecture" width="100" height="60"/> </a> 
 </p>
 
+</br>
+
+|                              |                              |                              |                       |
+| :---------------------------:|:----------------------------:|:----------------------------:|:---------------------:|
+| ![](screenshots/image1.png)  |  ![](screenshots/image2.png) | ![](screenshots/image3.png)  |  ![](screenshots/image4.png)|
 
 
-## Key Features
+
+* [Introduction](#introduction)
+* [Key Features](#key-features)
+* [Architecture](#architecture)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Known issues and limitations](#known-issues-and-limitations)
+* [License](#license)
+* [Authors and history](#authors-and-history)
+* [Acknowledgments](#acknowledgments)
+
+
+Introduction
+------------
+
+Key Features
+------------
 
 🖌️ **Theming and Design**
 - **Predefined Custom Themes**: Choose from a selection of beautifully crafted themes.
@@ -50,7 +74,9 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 - **Back to Top Button**: A convenient button appears when scrolling down for quick navigation back to the top.
 - **Pull-to-Refresh**: Easily refresh the data within the app to see the most recent updates.
 
-#### Architecture
+
+Architecture
+------------
 
 ![App Packaging Structure](#)
 
@@ -68,6 +94,30 @@ The app uses two databases: one online and one offline.
 
 - **Online Database**: Uses Firebase Realtime Database for real-time updates.
   ![Online Database Schema](#)
+
+
+Installation
+-------------
+
+Usage
+------
+
+Known issues and limitations
+----------------------------
+
+
+License
+-------
+
+
+Authors and history
+---------------------------
+
+* Esam Bashir : The original author.
+
+
+Acknowledgments
+---------------
 
 - **Offline Database**: Stores data locally for offline access and faster performance.
   ![Offline Database Schema](#)
