@@ -65,14 +65,24 @@ Key Features
 👥 **User Account Management**
 - **Account Creation and Login**: Supports account creation, login, and password reset via email.
 - **Profile Picture**: Users can upload and save profile pictures using Firebase Storage.
-
-🔄 **Data Synchronization**
-- **Worker API**: Schedules hourly data refreshes to ensure the latest information is available.
-- **Service API**: Runs a background service to sync data from the cloud in real-time, keeping the app updated whether in the foreground or background.
-
+  
 🛠️ **User Experience Enhancements**
 - **Back to Top Button**: A convenient button appears when scrolling down for quick navigation back to the top.
 - **Pull-to-Refresh**: Easily refresh the data within the app to see the most recent updates.
+
+### The following features are either yet to be implemented or have some problems. See  [Known issues and limitations](#known-issues-and-limitations) for more info.
+
+📅 ~~**Calendar Source**~~
+
+API Link Integration: Users can add a custom calendar source by providing an API link in the settings page. This allows for personalized and up-to-date menu data directly from the user’s preferred source.
+
+🔄  ~~**Data Synchronization**~~ 
+- **Worker API**: Schedules hourly data refreshes to ensure the latest information is available.
+- **Service API**: Runs a background service to sync data from the cloud in real-time, keeping the app updated whether in the foreground or background.
+
+🔔 ~~**Notifications**~~
+- **Data change notifications** : Any remote data change event will result in a notifcation if the app is in the background (Only supported for firebase)
+
 
 
 Architecture
@@ -102,13 +112,41 @@ The app uses two databases: one online and one offline.
 
 Installation
 -------------
+As of now. you have to clone the repo and build the app yourself after connecting it to the firebase service that you manage/your data provider gave you. However, in the next version of the app it is planned for the app to be API based. At that point ready apk files will be provided here on github and possibly on the Play Store.
 
 Usage
 ------
 
 Known issues and limitations
 ----------------------------
+- **CalendarScreen** :
 
+  When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
+
+- **FoodDetailsScreen** :
+
+  The header (that shows the food name and image) shows a vertical line with the primary color on the edges when in collapsed state.
+
+- **YemekCalendarDropdownList** :
+  
+   1- The dropdown list background color is not suitable.
+  
+   2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
+      The appropriate behavior is for it to match the width of the enclosing outlined button.
+
+- **Background Worker** :
+
+  The refresh data worker responsible for refreshing the data every two hours does not work despite it being registered as can be seen from the 'App Inspection' panel in Android Studio.
+
+- **Notifications** :
+
+ Notifications are not yet set up. The foreground service that is responsible for handling the events and showing wither a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
+ 
+- **Calendar Source Settings** :
+   * There are no settings for a calendar source that the user can provide himself yet.
+   * A simple option to add the Firebase Configurations (Auth Domain, Realtime DB url and StorageBucket) could be implemented but that is too tightly coupled with Firebase and requires each provider to give the user three links. It also requires the provider make a logic to give access to that specific app in some way since the provider can not use the 'App Check' feature.
+   * So instead of that it was decided to make the app API based and thus, completely Firebase-independent. The data layered is already structured in such way. What is required is to make an OpenAPI document with the required specifications. But this requires changing the  database schema. So this was left for the next version of the app. 
+   * As of now, the sources are hard coded with the app and requires the one who build it to provide the Firebase services that follow the required rules.
 
 License
 -------
