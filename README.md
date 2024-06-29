@@ -149,7 +149,7 @@ Known issues and limitations
 
 - **Notifications** :
 
- Notifications are not yet set up. The foreground service that is responsible for handling the events and showing wither a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
+ Notifications are not yet set up. The foreground service that is responsible for handling the events and showing either a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
  
 - **Calendar Source Settings** :
    * There are no settings for a calendar source that the user can provide himself yet.
