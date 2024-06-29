@@ -119,6 +119,10 @@ Usage
 
 Known issues and limitations
 ----------------------------
+- **Language Support on previous APIs** :
+
+  The app language does not change when the user selects a new language on devices with API level 28. Bigger APIs has yet to be tested. The reason for this is undetermined yet but it was observed that the locale is succuffully changed despite the language not changing.
+    
 - **CalendarScreen** :
 
   When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
