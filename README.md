@@ -119,6 +119,7 @@ Usage
 
 Known issues and limitations
 ----------------------------
+### App Wide Isuues
 - **Language Support on previous APIs** :
 
   The app language does not change when the user selects a new language on devices with API level 28. Bigger APIs has yet to be tested. The reason for this is undetermined yet but it was observed that the locale is succuffully changed despite the language not changing.
@@ -127,6 +128,29 @@ Known issues and limitations
 
      As of now, only gregorian calendar is supported. The dates are handled through unix-epoch time stamps, but the months list, date formatting, add event to calendar ..etc are coded with consideration for gregorian calendar only.
 
+
+- **Background Worker** :
+
+  The refresh data worker responsible for refreshing the data every two hours does not work despite it being registered as can be seen from the 'App Inspection' panel in Android Studio.
+
+- **Notifications** :
+
+    Notifications are not yet set up. The foreground service that is responsible for handling the events and showing either a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
+ 
+- **Calendar Source Settings** :
+   * There are no settings for a calendar source that the user can provide himself yet.
+   * A simple option to add the Firebase Configurations (Auth Domain, Realtime DB url and StorageBucket) could be implemented but that is too tightly coupled with Firebase and requires each provider to give the user three links. It also requires the provider make a logic to give access to that specific app in some way since the provider can not use the 'App Check' feature.
+   * So instead of that it was decided to make the app API based and thus, completely Firebase-independent. The data layered is already structured in such way. What is required is to make an OpenAPI document with the required specifications. But this requires changing the  database schema. So this was left for the next version of the app. 
+   * As of now, the sources are hard coded with the app and requires the one who build it to provide the Firebase services that follow the required rules.
+
+- **YemekCalendarDropdownList** :
+  
+   1- The dropdown list background color is not suitable.
+  
+   2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
+      The appropriate behavior is for it to match the width of the enclosing outlined button.
+
+### Screen Specific Isuues
 - **CalendarScreen** : 
   * When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
   * The month name in the month navigation bar is not localized when the language is changed. This is because the month list is an enumeration of gregorian calendar months. To solve this a logic to get the localized month name through `SimpleDateFormat("MMMM", Locale.getDefault()).format(date)` should be implemented.  
@@ -136,26 +160,9 @@ Known issues and limitations
 
   The header (that shows the food name and image) shows a vertical line with the primary color on the edges when in collapsed state.
 
-- **YemekCalendarDropdownList** :
-  
-   1- The dropdown list background color is not suitable.
-  
-   2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
-      The appropriate behavior is for it to match the width of the enclosing outlined button.
-
-- **Background Worker** :
-
-  The refresh data worker responsible for refreshing the data every two hours does not work despite it being registered as can be seen from the 'App Inspection' panel in Android Studio.
-
-- **Notifications** :
-
- Notifications are not yet set up. The foreground service that is responsible for handling the events and showing either a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
- 
-- **Calendar Source Settings** :
-   * There are no settings for a calendar source that the user can provide himself yet.
-   * A simple option to add the Firebase Configurations (Auth Domain, Realtime DB url and StorageBucket) could be implemented but that is too tightly coupled with Firebase and requires each provider to give the user three links. It also requires the provider make a logic to give access to that specific app in some way since the provider can not use the 'App Check' feature.
-   * So instead of that it was decided to make the app API based and thus, completely Firebase-independent. The data layered is already structured in such way. What is required is to make an OpenAPI document with the required specifications. But this requires changing the  database schema. So this was left for the next version of the app. 
-   * As of now, the sources are hard coded with the app and requires the one who build it to provide the Firebase services that follow the required rules.
+- **Appearance Screen** :
+    * The color schemes of some predefined-themes is not good and should be changed.
+    * The 'Disabled Theme' should not be included in the theme list.   
 
 License
 -------
