@@ -7,7 +7,7 @@
 ### 🍽️ **A Monthly Food Menu Application**
 This application, built using Jetpack Compose, provides an intuitive and visually appealing way to browse and manage monthly food menus for selected institutions. Detailed overview of its features and capabilities are below.
 
-[![License](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
+[![License](https://img.shields.io/badge/License-GPL3.0-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
 [![Latest release](http://img.shields.io/badge/beta-1.0-blue.svg?style=flat-square)](./)
 [![minSdk](https://img.shields.io/badge/minSdk-28-green.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
 [![targetSdk](http://img.shields.io/badge/targetSdk-34-blue.svg?style=flat-square)](./)
@@ -148,12 +148,29 @@ API Link Integration: Users can add a custom calendar source by providing an API
 🔔 ~~**Notifications**~~
 - **Data change notifications** : Any remote data change event will result in a notifcation if the app is in the background (Only supported for firebase)
 
+### Upcoming Features
 
+#### Version 2.0:
+*API-based structure:*
+- Settings menu includes a field for the user to provide an API link. 
+- Food menu data fetches through the given API, making it more adaptable and dynamic.
+- Online and Local DB Schemas will be changed to use an enum for MealType and FoodType.
+  
+*Worker API:*
+  - Schedules hourly data refreshes to ensure the latest information is available.
+    
+*Service API:*
+  - Runs a background service to sync data from the cloud in real-time.
+    
+*Notifications:*
+  - Notifications for data change events when the app is in the background
 
 Architecture
 ------------
 
 #### App Structure
+
+The app is single-moduled and is structured by feature as follows :
 
 ![App Packaging Structure](readme_resources/app_structure.png)
 
@@ -165,19 +182,24 @@ For more information on MVVM architecture, refer to [this link](https://develope
 
 #### Database Schema
 
-The app uses two databases: one online and one offline.
+The app uses two databases: one online and one offline. Their schemas can be seen below. Note that in the next version the schemas will be changed as a `FoodType` and a `MealType` enums will be introduced instead of using plain strings, since the types are already preset. 
 
 - **Online Database**: Uses Firebase Realtime Database for real-time updates.
-  ![Online Database Schema](#)
   
-- **Offline Database**: Stores data locally for offline access and faster performance.
-  ![Offline Database Schema](#)
+  ![Online Database Schema](readme_resources/online_db_diagram.svg)
+  
+- **Local Database**: Stores data locally for offline access and faster performance
+  
+  ![Offline Database Schema](readme_resources/local_db_diagram.svg)
   
 
 
 Installation
 -------------
-As of now. you have to clone the repo and build the app yourself after connecting it to the firebase service that you manage/your data provider gave you. However, in the next version of the app it is planned for the app to be API based. At that point ready apk files will be provided here on github and possibly on the Play Store.
+You can download the showcase version which comes with prefilled data for demonstration purposes from the _releases page_ [here](). But if you want to add a source of your own,
+as of now, you have to clone the repo and build the app yourself after connecting it to the firebase service that you manage/your data provider gave you.
+
+However, in the next version of the app it is planned for the app to be API based. At that point ready apk files will be provided here on github and possibly on the Play Store.
 
 Usage
 ------
