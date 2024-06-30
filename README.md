@@ -30,16 +30,32 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 
 ## Table of Contents
 
-* [Screenshots](#key-features)
-* [Introduction](#introduction)
-* [Key Features](#key-features)
-* [Architecture](#architecture)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Known issues and limitations](#known-issues-and-limitations)
-* [License](#license)
-* [Authors and history](#authors-and-history)
-* [Acknowledgments](#acknowledgments)
+- [Screenshots](#screenshots)
+  - [Authentication](#authentication)
+  - [Calendar](#calendar)
+  - [Settings](#settings)
+  - [Dynamic Theme](#dynamic-theme)
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+  - [Theming and Design](#theming-and-design)
+  - [Multilingual Support](#multilingual-support)
+  - [Local First](#local-first)
+  - [Firebase Integration](#firebase-integration)
+  - [Calendar Integration](#calendar-integration)
+  - [User Account Management](#user-account-management)
+  - [User Experience Enhancements](#user-experience-enhancements)
+- [Upcoming Features in v2.0](#upcoming-features)
+- [Architecture](#architecture)
+  - [App Structure](#app-structure)
+  - [Database Schema](#database-schema)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Known Issues and Limitations](#known-issues-and-limitations)
+  - [App-Wide Issues](#app-wide-issues)
+  - [Screen-Specific Issues](#screen-specific-issues)
+- [License](#license)
+- [Authors and History](#authors-and-history)
+- [Acknowledgments](#acknowledgments)
 
   
 Screenshots
@@ -76,22 +92,6 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/c91c8888-9257-46ab-be
 
 https://github.com/esammahdi/YemekCalendar/assets/95491137/4295e422-bd2a-4a44-bcb3-7afb1a532ab3
 -->
-
-
-
-* ### Dynamic Theme
-<p align="center">
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="150" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="150" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="150" />
-</p>
-
-
-
-<!--
-https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2fa-39d72b495526
--->
-
  
 * ### Settings
 <p align="center">
@@ -102,35 +102,53 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2
   <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="150" />
 </p>
 
+* ### Dynamic Theme
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="150" />
+</p>
+
+<!--
+https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2fa-39d72b495526
+-->
+
 Introduction
 ------------
 
 Key Features
 ------------
 
+<a name="theming-and-design"></a>
 🖌️ **Theming and Design**
 - **Predefined Custom Themes**: Choose from a selection of beautifully crafted themes.
-- **Material You**: Dynamic theming support to match the system’s color scheme for a personalized look and feel.
+- **Material You**: Dynamic theming support to match the system's color scheme for a personalized look and feel.
 
+<a name="multilingual-support"></a>
 🌍 **Multilingual Support**
 - **Languages**: Supports Turkish, English, and Arabic, ensuring accessibility for a broader audience.
 
+<a name="local-first"></a>
 📶 **Local First**
 - **Offline Functionality**: The app works seamlessly offline after the initial data fetch. Users can access menus without an internet connection.
 - **Remember Me**: Users can stay logged in if they mark the 'Remember Me' checkbox, bypassing the login screen on subsequent launches.
 
+<a name="firebase-integration"></a>
 🔄 **Firebase Integration**
 - **Realtime Database**: Keeps data up-to-date with real-time synchronization.
 - **Firebase Storage**: Allows users to save their profile pictures securely.
 
+<a name="calendar-integration"></a>
 📅 **Calendar Integration**
 - **Add to Calendar**: Users can add daily menus to their local calendars for easy access and reminders.
 - **Browse by Food Item**: See which days specific food items are served with a dedicated calendar view.
 
+<a name="user-account-management"></a>
 👥 **User Account Management**
 - **Account Creation and Login**: Supports account creation, login, and password reset via email.
 - **Profile Picture**: Users can upload and save profile pictures using Firebase Storage.
-  
+
+<a name="user-experience-enhancements"></a>
 🛠️ **User Experience Enhancements**
 - **Back to Top Button**: A convenient button appears when scrolling down for quick navigation back to the top.
 - **Pull-to-Refresh**: Easily refresh the data within the app to see the most recent updates.
@@ -206,7 +224,9 @@ Usage
 
 Known issues and limitations
 ----------------------------
-### App Wide Isuues
+
+### App Wide Issues
+
 - **Language Support on previous APIs** :
 
   The app language does not change when the user selects a new language on devices with API level 28. Bigger APIs has yet to be tested. The reason for this is undetermined yet but it was observed that the locale is succuffully changed despite the language not changing.
@@ -240,7 +260,8 @@ Known issues and limitations
    2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
       The appropriate behavior is for it to match the width of the enclosing outlined button.
 
-### Screen Specific Isuues
+### Screen Specific Issues
+
 - **CalendarScreen** :
   * No Language support other than the online-source provided one : While the rest of the app support other languages the food items names are gotten from the online db directly and thus have no translation to other languages. To fix this, the entire schema of the database needs to be altered, in a way that makes every source have multiple food items lists, one list for each locale (e.g: food_items_en, food_items_tr ..etc). But this is too bothersome and thus have been left for the next version of the app which is planned to be API based.  
   * When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
