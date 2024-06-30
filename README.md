@@ -20,10 +20,43 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 
 </br>
 
-|                              |                              |                              |                       |
-| :---------------------------:|:----------------------------:|:----------------------------:|:---------------------:|
-| ![](screenshots/image1.png)  |  ![](screenshots/image2.png) | ![](screenshots/image3.png)  |  ![](screenshots/image4.png)|
+<p align="center">
+  <img src="readme_resources/screenshots/Calendar_Screen_fixed.png" width="200" />
+  <img src="readme_resources/screenshots/FoodList_Scree_fixed.png" width="200" />
+  <img src="readme_resources/screenshots/Settings_Screen_fixed.png" width="200" />
+  <img src="readme_resources/screenshots/Login_Screen_Fixed.png" width="200" />
+</p>
 
+
+### Authentication
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="200" />
+</p>
+
+### Food Items
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="200" />
+</p>
+
+### Dynamic Theme
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="200" />
+</p>
+
+### Settings
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="200" />
+  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="200" />
+</p>
 
 
 * [Introduction](#introduction)
