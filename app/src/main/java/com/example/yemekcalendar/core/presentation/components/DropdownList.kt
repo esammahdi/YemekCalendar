@@ -50,7 +50,13 @@ fun YemekCalendarDropdownList(
             modifier = Modifier
                 .height(50.dp)
                 .padding(5.dp)
-                .fillMaxWidth()
+                .let{
+                    if (wrapContentWidth) {
+                        it.wrapContentWidth()
+                    } else {
+                        it.fillMaxWidth()
+                    }
+                }
                 .clickable {
                     expanded = true
                 }
