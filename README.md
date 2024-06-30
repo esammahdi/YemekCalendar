@@ -25,39 +25,9 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 
 </br>
 
-## Screenshots
-* ### Authentication
-<p align="center">
-  <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="200" />
-</p>
+## Table of Contents
 
-* ### Calendar
-<p align="center">
-  <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="200" />
-</p>
-
-* ### Dynamic Theme
-<p align="center">
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="200" />
-</p>
- 
-* ### Settings
-<p align="center">
-  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="200" />
-  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="200" />
-</p>
-
-
+* [Screenshots](#key-features)
 * [Introduction](#introduction)
 * [Key Features](#key-features)
 * [Architecture](#architecture)
@@ -68,6 +38,66 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 * [Authors and history](#authors-and-history)
 * [Acknowledgments](#acknowledgments)
 
+  
+Screenshots
+------------
+* ### Authentication
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="185" />
+</p>
+
+<!--
+https://github.com/esammahdi/YemekCalendar/assets/95491137/30c1168e-f722-440e-bd67-fdfd0ff91d23
+
+https://github.com/esammahdi/YemekCalendar/assets/95491137/9fe62cba-b307-44f8-8814-d976da71b4fa
+
+https://github.com/esammahdi/YemekCalendar/assets/95491137/1ae4b2fa-ff78-4403-91d0-1fcaa3b50ac4
+-->
+
+* ### Calendar
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="185" />
+</p>
+
+
+
+<!--
+https://github.com/esammahdi/YemekCalendar/assets/95491137/63ea23b9-494e-45b1-ba8a-5001ddca0204 
+
+https://github.com/esammahdi/YemekCalendar/assets/95491137/c91c8888-9257-46ab-be79-ff5288a7f2cc
+
+https://github.com/esammahdi/YemekCalendar/assets/95491137/4295e422-bd2a-4a44-bcb3-7afb1a532ab3
+-->
+
+
+
+* ### Dynamic Theme
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="185" />
+</p>
+
+
+
+<!--
+https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2fa-39d72b495526
+-->
+
+ 
+* ### Settings
+<p align="center">
+  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="185" />
+</p>
 
 Introduction
 ------------
