@@ -41,8 +41,9 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
   <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="200" />
 </p>
 
-### Food Items
+### Calendar
 <p align="center">
+  <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="200" />
   <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="200" />
   <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="200" />
   <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="200" />
