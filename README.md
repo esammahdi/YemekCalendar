@@ -46,9 +46,9 @@ Screenshots
 ------------
 * ### Authentication
 <p align="center">
-  <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="150" />
 </p>
 
 <!--
@@ -61,10 +61,10 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/1ae4b2fa-ff78-4403-91
 
 * ### Calendar
 <p align="center">
-  <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image4.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="150" />
 </p>
 
 
@@ -81,9 +81,9 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/4295e422-bd2a-4a44-bc
 
 * ### Dynamic Theme
 <p align="center">
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="150" />
 </p>
 
 
@@ -95,11 +95,11 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2
  
 * ### Settings
 <p align="center">
-  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="170" />
-  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="170" />
-  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="170" />
-  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="170" />
-  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="170" />
+  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="150" />
+  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="150" />
 </p>
 
 Introduction
