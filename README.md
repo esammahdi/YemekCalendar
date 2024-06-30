@@ -25,23 +25,15 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 
 </br>
 
-
-<p align="center">
-  <img src="readme_resources/screenshots/Calendar_Screen_fixed.png" width="200" />
-  <img src="readme_resources/screenshots/FoodList_Scree_fixed.png" width="200" />
-  <img src="readme_resources/screenshots/Settings_Screen_fixed.png" width="200" />
-  <img src="readme_resources/screenshots/Login_Screen_Fixed.png" width="200" />
-</p>
-
-
-### Authentication
+## Screenshots
+* ### Authentication
 <p align="center">
   <img src="readme_resources/screenshots/Preview/Authentication/image1.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Authentication/image2.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Authentication/image3.png" width="200" />
 </p>
 
-### Calendar
+* ### Calendar
 <p align="center">
   <img src="readme_resources/screenshots/Preview/FoodItems/image1.png" width="200" />
   <img src="readme_resources/screenshots/Preview/FoodItems/image3.png" width="200" />
@@ -49,14 +41,14 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
   <img src="readme_resources/screenshots/Preview/FoodItems/image5.png" width="200" />
 </p>
 
-### Dynamic Theme
+* ### Dynamic Theme
 <p align="center">
   <img src="readme_resources/screenshots/Preview/Dynamic Theme/image1.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="200" />
 </p>
  
-### Settings
+* ### Settings
 <p align="center">
   <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="200" />
