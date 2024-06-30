@@ -65,7 +65,7 @@ Key Features
 👥 **User Account Management**
 - **Account Creation and Login**: Supports account creation, login, and password reset via email.
 - **Profile Picture**: Users can upload and save profile pictures using Firebase Storage.
-  
+
 🛠️ **User Experience Enhancements**
 - **Back to Top Button**: A convenient button appears when scrolling down for quick navigation back to the top.
 - **Pull-to-Refresh**: Easily refresh the data within the app to see the most recent updates.
@@ -76,7 +76,7 @@ Key Features
 
 API Link Integration: Users can add a custom calendar source by providing an API link in the settings page. This allows for personalized and up-to-date menu data directly from the user’s preferred source.
 
-🔄  ~~**Data Synchronization**~~ 
+🔄  ~~**Data Synchronization**~~
 - **Worker API**: Schedules hourly data refreshes to ensure the latest information is available.
 - **Service API**: Runs a background service to sync data from the cloud in real-time, keeping the app updated whether in the foreground or background.
 
@@ -104,10 +104,10 @@ The app uses two databases: one online and one offline.
 
 - **Online Database**: Uses Firebase Realtime Database for real-time updates.
   ![Online Database Schema](#)
-  
+
 - **Offline Database**: Stores data locally for offline access and faster performance.
   ![Offline Database Schema](#)
-  
+
 
 
 Installation
@@ -126,8 +126,11 @@ Known issues and limitations
 
 - **Support for only Gregorian Calendar** :
 
-     As of now, only gregorian calendar is supported. The dates are handled through unix-epoch time stamps, but the months list, date formatting, add event to calendar ..etc are coded with consideration for gregorian calendar only.
+  As of now, only gregorian calendar is supported. The dates are handled through unix-epoch time stamps, but the months list, date formatting, add event to calendar ..etc are coded with consideration for gregorian calendar only.
 
+- **Large Paddings in Topbars** :
+
+  Specially noticable in the sub-settings screens, theere is a large empty space above every appbar. But it is also there just in the whole app. Disabling `edgeToedge` support fixes it but that takes away an important feature.
 
 - **Background Worker** :
 
@@ -135,34 +138,35 @@ Known issues and limitations
 
 - **Notifications** :
 
-    Notifications are not yet set up. The foreground service that is responsible for handling the events and showing either a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
- 
+  Notifications are not yet set up. The foreground service that is responsible for handling the events and showing either a Toast (when inside the app) or a notification is set up, but the notifications themselves are not yet created.
+
 - **Calendar Source Settings** :
-   * There are no settings for a calendar source that the user can provide himself yet.
-   * A simple option to add the Firebase Configurations (Auth Domain, Realtime DB url and StorageBucket) could be implemented but that is too tightly coupled with Firebase and requires each provider to give the user three links. It also requires the provider make a logic to give access to that specific app in some way since the provider can not use the 'App Check' feature.
-   * So instead of that it was decided to make the app API based and thus, completely Firebase-independent. The data layered is already structured in such way. What is required is to make an OpenAPI document with the required specifications. But this requires changing the  database schema. So this was left for the next version of the app. 
-   * As of now, the sources are hard coded with the app and requires the one who build it to provide the Firebase services that follow the required rules.
+  * There are no settings for a calendar source that the user can provide himself yet.
+  * A simple option to add the Firebase Configurations (Auth Domain, Realtime DB url and StorageBucket) could be implemented but that is too tightly coupled with Firebase and requires each provider to give the user three links. It also requires the provider make a logic to give access to that specific app in some way since the provider can not use the 'App Check' feature.
+  * So instead of that it was decided to make the app API based and thus, completely Firebase-independent. The data layered is already structured in such way. What is required is to make an OpenAPI document with the required specifications. But this requires changing the  database schema. So this was left for the next version of the app.
+  * As of now, the sources are hard coded with the app and requires the one who build it to provide the Firebase services that follow the required rules.
 
 - **YemekCalendarDropdownList** :
-  
-   1- The dropdown list background color is not suitable.
-  
-   2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
-      The appropriate behavior is for it to match the width of the enclosing outlined button.
+
+  1- The dropdown list background color is not suitable.
+
+  2- The width of the dropdown is not consistent. Some times it takes the width of the entire screen and some times it wraps it's content width.
+  The appropriate behavior is for it to match the width of the enclosing outlined button.
 
 ### Screen Specific Isuues
-- **CalendarScreen** : 
+- **CalendarScreen** :
+  * No Language support other than the online-source provided one : While the rest of the app support other languages the food items names are gotten from the online db directly and thus have no translation to other languages. To fix this, the entire schema of the database needs to be altered, in a way that makes every source have multiple food items lists, one list for each locale (e.g: food_items_en, food_items_tr ..etc). But this is too bothersome and thus have been left for the next version of the app which is planned to be API based.
   * When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
-  * The month name in the month navigation bar is not localized when the language is changed. This is because the month list is an enumeration of gregorian calendar months. To solve this a logic to get the localized month name through `SimpleDateFormat("MMMM", Locale.getDefault()).format(date)` should be implemented.  
-  
+  * The month name in the month navigation bar is not localized when the language is changed. This is because the month list is an enumeration of gregorian calendar months. To solve this a logic to get the localized month name through `SimpleDateFormat("MMMM", Locale.getDefault()).format(date)` should be implemented.
+
 
 - **FoodDetailsScreen** :
 
   The header (that shows the food name and image) shows a vertical line with the primary color on the edges when in collapsed state.
 
 - **Appearance Screen** :
-    * The color schemes of some predefined-themes is not good and should be changed.
-    * The 'Disabled Theme' should not be included in the theme list.   
+  * The color schemes of some predefined-themes is not good and should be changed.
+  * The 'Disabled Theme' should not be included in the theme list.
 
 License
 -------
