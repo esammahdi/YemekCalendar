@@ -153,9 +153,9 @@ API Link Integration: Users can add a custom calendar source by providing an API
 Architecture
 ------------
 
-![App Packaging Structure](#)
+#### App Structure
 
-##### App Structure
+![App Packaging Structure](readme_resources/app_structure.png)
 
 The app follows the MVVM (Model-View-ViewModel) architecture. MVVM helps in separating the user interface logic from business logic, making the code more modular and easier to manage.
 
@@ -163,7 +163,7 @@ For more information on MVVM architecture, refer to [this link](https://develope
 
 ![MVVM Architecture](#)
 
-##### Database Schema
+#### Database Schema
 
 The app uses two databases: one online and one offline.
 
@@ -245,5 +245,6 @@ Authors and history
 
 Acknowledgments
 ---------------
+* [ Abdellah Ibn El Azraq (BBlueCoder) ](https://github.com/BBlueCoder/ViDown/tree/master) : His article about using Hilt with was realy helpfull. I also modeled some parts of the readme file after his project's readme file. 
 * [Logo.com](https://logo.com/) : Used to design the application logo as well as some other logos for the readme file.
 * [Previewed](https://previewed.app/) : Used to design the screenshots previews above.
