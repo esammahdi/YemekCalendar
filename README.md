@@ -14,16 +14,17 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
 
 <p align="center">
 <a href="https://www.android.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/android/android-official.svg" alt="flutter" width="100" height="60"/> </a>
-<a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg" alt="flutter" width="100" height="60"/> </a> 
+<a href="https://developer.android.com/develop/ui/compose" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetpackcompose/jetpackcompose-original.svg" alt="jetpack compose" width="100" height="60" />      
+<a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg" alt="flutter" width="120" height="70"/> </a> 
 <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-ar21.svg" alt="kotlin" width="100" height="60"/> </a>
 </p>
 
 </br>
 
 <p align="center">
-<a href="https://dagger.dev/hilt/" target="_blank" rel="noreferrer"> <img src="readme_resources/dagger_hilt.svg" alt="Android Dagger Hilt Library" width="100" height="60"/> </a> 
-<a href="https://developer.android.com/jetpack/androidx/releases/room" target="_blank" rel="noreferrer"> <img src="readme_resources/room.svg" alt="Android Room Database" width="100" height="45"/> </a> 
-<a href="https://developer.android.com/jetpack/guide#recommended-app-arch" target="_blank" rel="noreferrer"> <img src="readme_resources/mvvm.svg" alt="MVVM architecture" width="100" height="60"/> </a> 
+<a href="https://dagger.dev/hilt/" target="_blank" rel="noreferrer"> <img src="readme_resources/dagger_hilt.svg" alt="Android Dagger Hilt Library" width="120" height="80"/> </a> 
+<a href="https://developer.android.com/jetpack/androidx/releases/room" target="_blank" rel="noreferrer"> <img src="readme_resources/room.svg" alt="Android Room Database" width="100" height="60"/> </a> 
+<a href="https://developer.android.com/jetpack/guide#recommended-app-arch" target="_blank" rel="noreferrer"> <img src="readme_resources/mvvm.svg" alt="MVVM architecture" width="150" height="70"/> </a> 
 </p>
 
 </br>
@@ -195,8 +196,6 @@ The app is single-moduled and is structured by feature as follows :
 The app follows the MVVM (Model-View-ViewModel) architecture. MVVM helps in separating the user interface logic from business logic, making the code more modular and easier to manage.
 
 For more information on MVVM architecture, refer to [this link](https://developer.android.com/jetpack/guide#recommended-app-arch).
-
-![MVVM Architecture](#)
 
 #### Database Schema
 
