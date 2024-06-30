@@ -141,7 +141,7 @@ fun DayGrid(
 
         val configuration = LocalConfiguration.current
         val screenWidth = configuration.screenWidthDp.dp
-        val columns = calculateColumns(screenWidth, 150.dp, 300.dp)
+        val columns = calculateColumns(screenWidth, 150.dp, 250.dp)
 
         val weeksMap = divideIntoWeeks(calendarDays).toSortedMap()
             .mapValues { (_, days) ->
