@@ -48,7 +48,7 @@ This application, built using Jetpack Compose, provides an intuitive and visuall
   <img src="readme_resources/screenshots/Preview/Dynamic Theme/image2.png" width="200" />
   <img src="readme_resources/screenshots/Preview/Dynamic Theme/image3.png" width="200" />
 </p>
-
+ 
 ### Settings
 <p align="center">
   <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="200" />
