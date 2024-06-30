@@ -1,10 +1,14 @@
+<p align="center">
+<a href="https://github.com/esammahdi/YemekCalendar/" target="_blank" rel="noreferrer"> <img src="readme_resources/ycal_logo.svg" alt="yemek calendar logo" width="400" height="300"/> </a>  
+</p>
+
 # YemekCalendar
 
 ### 🍽️ **A Monthly Food Menu Application**
 This application, built using Jetpack Compose, provides an intuitive and visually appealing way to browse and manage monthly food menus for selected institutions. Detailed overview of its features and capabilities are below.
 
 [![License](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
-[![Latest release](http://img.shields.io/badge/beta-0.1.0-blue.svg?style=flat-square)](./)
+[![Latest release](http://img.shields.io/badge/beta-1.0-blue.svg?style=flat-square)](./)
 [![minSdk](https://img.shields.io/badge/minSdk-28-green.svg?style=flat-square)](https://spdx.org/licenses/MIT.html)
 [![targetSdk](http://img.shields.io/badge/targetSdk-34-blue.svg?style=flat-square)](./)
 
