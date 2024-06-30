@@ -95,11 +95,11 @@ https://github.com/esammahdi/YemekCalendar/assets/95491137/3b0368ba-35e7-46c1-b2
  
 * ### Settings
 <p align="center">
-  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="185" />
-  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="185" />
+  <img src="readme_resources/screenshots/Preview/Settings/image1.png" width="170" />
+  <img src="readme_resources/screenshots/Preview/Settings/image2.png" width="170" />
+  <img src="readme_resources/screenshots/Preview/Settings/image3.png" width="170" />
+  <img src="readme_resources/screenshots/Preview/Settings/image4.png" width="170" />
+  <img src="readme_resources/screenshots/Preview/Settings/image5.png" width="170" />
 </p>
 
 Introduction
