@@ -245,5 +245,5 @@ Authors and history
 
 Acknowledgments
 ---------------
-* [Ucraft](https://www.ucraft.com/ai-logo-generator) : Used to design the application logo as well as some other logos for the readme file.
+* [Logo.com](https://logo.com/) : Used to design the application logo as well as some other logos for the readme file.
 * [Previewed](https://previewed.app/) : Used to design the screenshots previews above.
