@@ -42,10 +42,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
@@ -61,6 +64,7 @@ import com.example.yemekcalendar.core.presentation.components.Title
 import com.example.yemekcalendar.settings.presentation.components.ProfileShimmerLoadingScreen
 import com.example.yemekcalendar.settings.presentation.viewmodel.ProfileViewModel
 import com.example.yemekcalendar.ui.theme.LabelTextStyle
+import com.example.yemekcalendar.ui.theme.RegularFont
 import java.time.ZoneId
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -310,15 +314,34 @@ fun ProfileScreen(
 
 @Composable
 fun InfoRow(label: String, value: String) {
+    val LabelTextStyle = TextStyle(
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Bold,
+        fontStyle = FontStyle.Italic,
+        fontFamily = RegularFont,
+        color = MaterialTheme.colorScheme.onBackground
+    )
+
+    val ContentTextStyle = TextStyle(
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Normal,
+        fontFamily = RegularFont,
+        fontStyle = FontStyle.Italic,
+        color = MaterialTheme.colorScheme.onBackground
+    )
 
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(text = label, style = MaterialTheme.typography.bodyMedium)
+        Text(
+            text = label,
+            style = LabelTextStyle
+        )
+
         Text(
             text = value,
-            style = MaterialTheme.typography.bodyMedium,
+            style = ContentTextStyle,
             fontWeight = FontWeight.Bold
         )
     }
