@@ -63,8 +63,6 @@ fun DayGrid(
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    val calendarEventInsertionSuccessMessage =
-        stringResource(R.string.calendar_event_insertion_success_message)
     val permissionDeniedMessage = stringResource(R.string.calendar_permission_denied_message)
     var shouldShowRationaleDialog by remember { mutableStateOf(false) }
 
