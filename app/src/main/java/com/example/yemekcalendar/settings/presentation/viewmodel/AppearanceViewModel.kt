@@ -1,6 +1,5 @@
 package com.example.yemekcalendar.settings.presentation.viewmodel
 
-import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -55,7 +54,6 @@ class AppearanceViewModel @Inject constructor(
     }
 
     fun onThemeSelected(theme: AppTheme) = viewModelScope.launch {
-        Log.d("AppearanceViewModel", "onThemeSelected: $theme")
         localUserRepository.saveThemeChoice(theme)
         _appearanceState.value = _appearanceState.value.copy(selectedTheme = theme)
     }
@@ -66,7 +64,6 @@ class AppearanceViewModel @Inject constructor(
     }
 
     fun onThemeModeSelected(themeMode: ThemeMode) = viewModelScope.launch {
-        Log.d("AppearanceViewModel", "onThemeModeSelected: $themeMode")
         localUserRepository.saveThemeMode(themeMode)
         _appearanceState.value = _appearanceState.value.copy(selectedThemeMode = themeMode)
     }
@@ -77,7 +74,6 @@ class AppearanceViewModel @Inject constructor(
     }
 
     fun onDynamicColorSelected(isDynamicColor: Boolean) = viewModelScope.launch {
-        Log.d("AppearanceViewModel", "onDynamicColorSelected: $isDynamicColor")
         localUserRepository.saveDynamicColor(isDynamicColor)
         _appearanceState.value = _appearanceState.value.copy(isDynamicColor = isDynamicColor)
     }
