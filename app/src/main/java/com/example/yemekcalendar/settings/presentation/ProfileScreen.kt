@@ -187,6 +187,8 @@ fun ProfileScreen(
                     )
                 }
             ) { paddingValues ->
+                val buttonWidth = 150.dp
+
                 Column(
                     modifier = Modifier
                         .padding(paddingValues)
@@ -248,6 +250,7 @@ fun ProfileScreen(
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Button(
+                        modifier = Modifier.width(buttonWidth),
                         shape = MaterialTheme.shapes.small,
                         onClick = {
                             launcher.launch(
@@ -299,6 +302,7 @@ fun ProfileScreen(
 
                     // Buttons
                     Button(
+                        modifier = Modifier.width(buttonWidth),
                         shape = MaterialTheme.shapes.small,
                         onClick = { profileViewModel.onLogoutButtonClicked() },
                     ) {
