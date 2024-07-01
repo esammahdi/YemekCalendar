@@ -175,13 +175,13 @@ fun DayGrid(
                         )
                     }
 
-                    items(days) { calendaDay ->
+                    items(days) { calendarDay ->
                         CalendarDayCard(
                             modifier = Modifier
                                 .aspectRatio(1f),
-                            day = calendaDay,
+                            day = calendarDay,
                             onAddToCalendarClicked = {
-                                val intent = createCalendarEventIntent(calendaDay, context)
+                                val intent = createCalendarEventIntent(calendarDay, context)
                                 if (calendarPermissionsStateList.allPermissionsGranted) {
                                     launcher.launch(intent)
                                 } else {
