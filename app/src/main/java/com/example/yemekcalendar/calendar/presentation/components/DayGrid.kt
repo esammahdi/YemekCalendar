@@ -81,9 +81,8 @@ fun DayGrid(
         contract = ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == -1) {
+            //TODO: Fix this. No message shows when the user does not give permission.
             Toast.makeText(context, permissionDeniedMessage, Toast.LENGTH_SHORT).show()
-        } else {
-//            Toast.makeText(context, calendarEventInsertionSuccessMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -264,51 +263,3 @@ fun calculateColumns(screenWidth: Dp, minCardSize: Dp, maxCardSize: Dp): Int {
     val maxColumns = (screenWidth / maxCardSize).toInt()
     return max(2, min(minColumns, maxColumns)) // Ensure at least 2 columns
 }
-
-//val lazyListState = rememberLazyListState()
-//
-//val showBackToTopButton by remember {
-//    derivedStateOf {
-//        lazyListState.firstVisibleItemIndex > 0
-//    }
-//}
-//
-//LazyColumn(
-//modifier = Modifier
-//.fillMaxSize()
-//.padding(4.dp),
-//state = lazyListState
-//) {
-//
-//    weeksMap.forEach { (week, days) ->
-//
-//        item {
-//            Header(
-//                text = (stringResource(R.string.week) + week),
-//                modifier = Modifier.padding(horizontal = 12.dp, vertical = 24.dp),
-//            )
-//        }
-//
-//        items(days) {
-//            FlowRow(
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .padding(2.dp)
-//                ,
-//                horizontalArrangement = Arrangement.spacedBy(8.dp),
-//                verticalArrangement = Arrangement.spacedBy(8.dp)
-//            ) {
-//                days.forEach { calendaDay ->
-//                    CalendarDayCard(
-//                        modifier = Modifier
-////                                    .padding(4.dp)
-//                            .size(175.dp)
-//                            .aspectRatio(1f),
-//                        day = calendaDay
-//                    )
-//                }
-//            }
-//        }
-//
-//    }
-//}

@@ -20,24 +20,4 @@ abstract class YemekCalendarRoomDB : RoomDatabase() {
     abstract fun foodItemDao(): FoodItemDao
     abstract fun calendarDayDao(): CalendarDao
     abstract fun institutionDao(): InstitutionDao
-
-
-//    companion object {
-//        @Volatile
-//        private var Instance: YemekCalendarRoomDB? = null
-//
-//        fun getDatabase(context: Context): YemekCalendarRoomDB {
-//            return Instance ?: synchronized(this) {
-//                 Room.databaseBuilder(
-//                     context,
-//                     YemekCalendarRoomDB::class.java,
-//                     "yemekcalendar_database"
-//                 )
-//                     .fallbackToDestructiveMigration()
-//                     .build()
-//                     .also { Instance = it }
-//            }
-//        }
-//    }
-
 }
