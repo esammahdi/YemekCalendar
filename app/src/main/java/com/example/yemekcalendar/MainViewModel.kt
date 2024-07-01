@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,21 +29,27 @@ class MainViewModel @Inject constructor(
         initializeCalled = true
 
         viewModelScope.launch {
-            val isUserSignedIn = localUserRepository.isUserSaved()
+            var isUserSignedIn = false
+
+            runBlocking {
+            isUserSignedIn = localUserRepository.isUserSaved()
+            }
+
             _mainState.value = _mainState.value.copy(
                 isUserSignedIn = isUserSignedIn
             )
+
             // Start observing all flows concurrently
             combine(
                 localUserRepository.getThemeChoiceFlow(),
                 localUserRepository.getThemeModeFlow(),
                 localUserRepository.getDynamicColorFlow()
             ) { theme, themeMode, isDynamicColor ->
-                MainState(
+                _mainState.value.copy(
                     theme = theme,
                     themeMode = themeMode,
                     isDynamicColor = isDynamicColor,
-                    isUserSignedIn = _mainState.value.isUserSignedIn // Retain existing value
+                    isUserSignedIn = isUserSignedIn
                 )
             }.collect { newState ->
                 _mainState.value = newState
