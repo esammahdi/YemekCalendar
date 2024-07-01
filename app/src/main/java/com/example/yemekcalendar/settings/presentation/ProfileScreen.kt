@@ -295,13 +295,8 @@ fun ProfileScreen(
 
                     // Buttons
                     Button(
-                        modifier = Modifier.height(40.dp),
                         shape = MaterialTheme.shapes.small,
                         onClick = { profileViewModel.onLogoutButtonClicked() },
-                        colors = ButtonDefaults.buttonColors().copy(
-                            containerColor = MaterialTheme.colorScheme.errorContainer,
-                            contentColor = MaterialTheme.colorScheme.onErrorContainer
-                        )
                     ) {
                         Text(
                             text = stringResource(R.string.logout)
@@ -315,6 +310,7 @@ fun ProfileScreen(
 
 @Composable
 fun InfoRow(label: String, value: String) {
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
