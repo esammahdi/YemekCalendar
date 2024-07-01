@@ -68,19 +68,23 @@ class LocalUserRepositoryImpl @Inject constructor(
     }
 
     // =============================== Theme ================================================================
-    override fun getThemeChoiceFlow(): Flow<AppTheme> {
-        return dataStore.data.map { preferences ->
-            val themeName = preferences[APP_THEME] ?: AppTheme.DEFAULT.name
-            AppTheme.valueOf(themeName)
-        }
-    }
-
     override suspend fun saveThemeChoice(appTheme: AppTheme) {
         dataStore.edit { preferences ->
             preferences[APP_THEME] = appTheme.name
         }
     }
 
+    override suspend fun getThemeChoice(): AppTheme {
+        val themeName = dataStore.data.first()[APP_THEME]
+        return AppTheme.valueOf(themeName ?: AppTheme.DEFAULT.name)
+    }
+
+    override fun getThemeChoiceFlow(): Flow<AppTheme> {
+        return dataStore.data.map { preferences ->
+            val themeName = preferences[APP_THEME] ?: AppTheme.DEFAULT.name
+            AppTheme.valueOf(themeName)
+        }
+    }
     // =================================== Theme Mode ==========================================================
     override suspend fun getThemeMode(): ThemeMode {
         val themeMode = dataStore.data.first()[THEME_MODE]

@@ -24,6 +24,7 @@ interface LocalUserRepository {
 
     //==============================================================================================
     suspend fun saveThemeChoice(appTheme: AppTheme)
+    suspend fun getThemeChoice(): AppTheme
     fun getThemeChoiceFlow(): Flow<AppTheme>
 
     //==============================================================================================
