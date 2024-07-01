@@ -1,5 +1,6 @@
 package com.example.yemekcalendar
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -31,6 +33,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
     mainViewModel: MainViewModel = hiltViewModel()
@@ -58,7 +61,8 @@ fun MainScreen(
         darkTheme = darkTheme,
         dynamicColor = isDynamicColor,
     ) {
-        Box(
+        Scaffold {
+            Box(
                 modifier = Modifier
                     .fillMaxSize()
             ) {
@@ -67,6 +71,8 @@ fun MainScreen(
                     startDestination = startDestination
                 )
             }
+        }
+
     }
 }
 
