@@ -29,7 +29,7 @@ class MainViewModel @Inject constructor(
         initializeCalled = true
 
         viewModelScope.launch {
-            var isUserSignedIn = false
+            var isUserSignedIn: Boolean
 
             runBlocking {
             isUserSignedIn = localUserRepository.isUserSaved()
