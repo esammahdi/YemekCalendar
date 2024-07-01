@@ -32,7 +32,8 @@ fun LanguageDropdownList(
     Row(
         modifier = Modifier
             .wrapContentWidth()
-            .padding(4.dp),
+            .padding(4.dp)
+            .padding(top = 30.dp),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
