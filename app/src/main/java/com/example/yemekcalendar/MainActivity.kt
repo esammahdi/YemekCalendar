@@ -38,6 +38,7 @@ fun MainScreen(
     mainViewModel: MainViewModel = hiltViewModel()
 ) {
     mainViewModel.initialize()
+
     val mainState by mainViewModel.mainState.collectAsStateWithLifecycle()
     val navController = rememberNavController()
 
@@ -50,6 +51,9 @@ fun MainScreen(
 
     val isDynamicColor =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) mainState.isDynamicColor else false
+
+    // Determine start destination based on sign-in state
+    val startDestination = if (mainState.isUserSignedIn) Screen.HomeScreen else Screen.LoginScreen
 
     YemekCalendarTheme(
         appTheme = appTheme,
@@ -64,7 +68,7 @@ fun MainScreen(
             ) {
                 NavigationGraph(
                     navController = navController,
-                    startDestination = if (mainState.isUserSignedIn) Screen.HomeScreen else Screen.LoginScreen
+                    startDestination = startDestination
                 )
             }
         }
