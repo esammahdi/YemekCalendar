@@ -29,31 +29,41 @@ class MainViewModel @Inject constructor(
         initializeCalled = true
 
         viewModelScope.launch {
-            var isUserSignedIn: Boolean
-
             runBlocking {
-            isUserSignedIn = localUserRepository.isUserSaved()
+            setInitialValues()
             }
+            observeThemeChanges()
+        }
+    }
 
-            _mainState.value = _mainState.value.copy(
-                isUserSignedIn = isUserSignedIn
+    suspend fun setInitialValues() {
+        val isUserSignedIn = localUserRepository.isUserSaved()
+        val theme = localUserRepository.getThemeChoice()
+        val themeMode = localUserRepository.getThemeMode()
+        val isDynamicColor = localUserRepository.getDynamicColor()
+
+        _mainState.value = _mainState.value.copy(
+            isUserSignedIn = isUserSignedIn,
+            theme = theme,
+            themeMode = themeMode,
+            isDynamicColor = isDynamicColor
+        )
+    }
+
+    suspend fun observeThemeChanges() {
+        // Start observing all flows concurrently
+        combine(
+            localUserRepository.getThemeChoiceFlow(),
+            localUserRepository.getThemeModeFlow(),
+            localUserRepository.getDynamicColorFlow()
+        ) { theme, themeMode, isDynamicColor ->
+            _mainState.value.copy(
+                theme = theme,
+                themeMode = themeMode,
+                isDynamicColor = isDynamicColor,
             )
-
-            // Start observing all flows concurrently
-            combine(
-                localUserRepository.getThemeChoiceFlow(),
-                localUserRepository.getThemeModeFlow(),
-                localUserRepository.getDynamicColorFlow()
-            ) { theme, themeMode, isDynamicColor ->
-                _mainState.value.copy(
-                    theme = theme,
-                    themeMode = themeMode,
-                    isDynamicColor = isDynamicColor,
-                    isUserSignedIn = isUserSignedIn
-                )
-            }.collect { newState ->
-                _mainState.value = newState
-            }
+        }.collect { newState ->
+            _mainState.value = newState
         }
     }
 }
