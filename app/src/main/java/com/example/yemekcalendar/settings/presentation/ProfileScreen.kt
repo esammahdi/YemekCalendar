@@ -319,7 +319,7 @@ fun ProfileScreen(
 @Composable
 fun InfoRow(label: String, value: String) {
     val LabelTextStyle = TextStyle(
-        fontSize = 18.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.Bold,
         fontStyle = FontStyle.Italic,
         fontFamily = RegularFont,
@@ -327,8 +327,8 @@ fun InfoRow(label: String, value: String) {
     )
 
     val ContentTextStyle = TextStyle(
-        fontSize = 16.sp,
-        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Thin,
         fontFamily = RegularFont,
         fontStyle = FontStyle.Italic,
         color = MaterialTheme.colorScheme.onBackground
