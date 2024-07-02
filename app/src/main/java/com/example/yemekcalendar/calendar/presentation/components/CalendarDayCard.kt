@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -26,6 +28,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.yemekcalendar.R
 import com.example.yemekcalendar.core.data.models.CalendarDay
@@ -189,6 +193,7 @@ fun UpdatedDayCard(
                     style = MaterialTheme.typography.titleSmall,
                 )
 
+                Spacer(modifier = Modifier.width(4.dp))
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -199,11 +204,15 @@ fun UpdatedDayCard(
                         shape = MaterialTheme.shapes.small,
                     ) {
                         Text(
+                            modifier = Modifier
+                                .padding(4.dp)
+                                .widthIn(50.dp),
                             text = stringResource(R.string.updated),
                             color = MaterialTheme.colorScheme.onSecondaryContainer,
-                            modifier = Modifier
-                                .padding(4.dp),
                             style = MaterialTheme.typography.labelSmall,
+                            fontStyle = FontStyle.Italic,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
 
