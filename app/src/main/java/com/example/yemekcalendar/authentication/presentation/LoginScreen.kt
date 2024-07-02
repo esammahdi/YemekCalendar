@@ -3,11 +3,8 @@ package com.example.yemekcalendar.authentication.presentation
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,10 +24,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.yemekcalendar.R
+import com.example.yemekcalendar.authentication.presentation.components.BaseAuthenticationLayout
 import com.example.yemekcalendar.authentication.presentation.components.CustomButton
 import com.example.yemekcalendar.authentication.presentation.components.Description
 import com.example.yemekcalendar.authentication.presentation.components.EmailTextField
-import com.example.yemekcalendar.authentication.presentation.components.LanguageDropdownList
 import com.example.yemekcalendar.authentication.presentation.components.PasswordTextField
 import com.example.yemekcalendar.authentication.presentation.components.Redirection
 import com.example.yemekcalendar.authentication.presentation.viewmodel.LoginViewModel
@@ -42,39 +39,24 @@ fun LoginScreen(
     navController: NavController,
     loginViewModel: LoginViewModel = hiltViewModel()
 ) {
-    val context = LocalContext.current
     loginViewModel.initialize()
-
     val loginState by loginViewModel.loginState.collectAsStateWithLifecycle()
+
+    val context = LocalContext.current
 
     if (loginState.isSuccess) {
         LaunchedEffect(Unit) {
-            navController.navigate(Screen.HomeScreen)  {
+            navController.navigate(Screen.HomeScreen) {
                 popUpTo(Screen.LoginScreen) { inclusive = true }
             }
         }
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        contentAlignment = Alignment.TopStart
-    ) {
-        LanguageDropdownList(
-            selectedLanguage = loginState.selectedLanguage,
-            onLanguageSelected = { loginViewModel.onLanguageSelected(it) }
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 30.dp, end = 30.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-
-
+    BaseAuthenticationLayout(
+        selectedLanguage = loginState.selectedLanguage,
+        onLanguageSelected = { loginViewModel.onLanguageSelected(it) }
+    )
+    {
             if (loginState.isError) {
                 LaunchedEffect(Unit) {
                     Toast.makeText(context, loginState.errorMessage, Toast.LENGTH_LONG).show()
@@ -179,7 +161,7 @@ fun LoginScreen(
                 text = stringResource(id = R.string.forgot_password_message),
                 onClick = { navController.navigate(Screen.ResetPasswordScreen) }
             )
-        }
     }
+
 }
 

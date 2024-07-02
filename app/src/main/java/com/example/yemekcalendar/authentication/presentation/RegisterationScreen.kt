@@ -2,11 +2,8 @@ package com.example.yemekcalendar.authentication.presentation
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,10 +24,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.yemekcalendar.R
+import com.example.yemekcalendar.authentication.presentation.components.BaseAuthenticationLayout
 import com.example.yemekcalendar.authentication.presentation.components.CustomButton
 import com.example.yemekcalendar.authentication.presentation.components.Description
 import com.example.yemekcalendar.authentication.presentation.components.EmailTextField
-import com.example.yemekcalendar.authentication.presentation.components.LanguageDropdownList
 import com.example.yemekcalendar.authentication.presentation.components.PasswordTextField
 import com.example.yemekcalendar.authentication.presentation.components.Redirection
 import com.example.yemekcalendar.authentication.presentation.viewmodel.RegistrationViewModel
@@ -74,130 +71,113 @@ fun RegisterationScreen(
         }
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        contentAlignment = Alignment.TopStart
+    BaseAuthenticationLayout(
+        selectedLanguage = registrationState.selectedLanguage,
+        onLanguageSelected = { registrationViewModel.onLanguageSelected(it) }
     ) {
-        LanguageDropdownList(
-            selectedLanguage = registrationState.selectedLanguage,
-            onLanguageSelected = { registrationViewModel.onLanguageSelected(it) }
+        // Registration Title
+        Title(
+            modifier = Modifier.padding(bottom = 10.dp),
+            text = stringResource(id = R.string.create_account),
         )
 
-        Column(
+        // Registration Description
+        Description(text = stringResource(id = R.string.create_account_description))
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Loading Indicator while processing registration request
+        if (registrationState.isLoading) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center,
+            ) {
+                CircularProgressIndicator()
+            }
+        }
+
+        //Email TextField
+        EmailTextField(
+            modifier = Modifier.fillMaxWidth(),
+            email = registrationState.email,
+            emailErrorMessage = registrationState.emailErrorMessage,
+            onValueChange = { registrationViewModel.onEmailValueChanged(it) },
+            imeAction = ImeAction.Next
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Email Confirmation Text Field
+        EmailTextField(
+            modifier = Modifier.fillMaxWidth(),
+            label = stringResource(id = R.string.repeat_email),
+            email = registrationState.repeatEmail,
+            emailErrorMessage = registrationState.repeatEmailErrorMessage,
+            onValueChange = { registrationViewModel.onRepeatEmailValueChanged(it) },
+            imeAction = ImeAction.Next
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Password Text Field
+        PasswordTextField(
+            modifier = Modifier.fillMaxWidth(),
+            password = registrationState.password,
+            passwordErrorMessage = registrationState.passwordErrorMessage,
+            onValueChange = { registrationViewModel.onPasswordValueChanged(it) },
+            imeAction = ImeAction.Next,
+            showPassword = registrationState.showPassword,
+            onShowPasswordClicked = { registrationViewModel.onShowPasswordClicked() }
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Repeat Password Text Field
+        PasswordTextField(
+            modifier = Modifier.fillMaxWidth(),
+            label = stringResource(id = R.string.repeat_password),
+            password = registrationState.repeatPassword,
+            passwordErrorMessage = registrationState.repeatPasswordErrorMessage,
+            onValueChange = { registrationViewModel.onRepeatPasswordValueChanged(it) },
+            imeAction = ImeAction.Done,
+            showPassword = registrationState.showPassword,
+            onShowPasswordClicked = { registrationViewModel.onShowPasswordClicked() }
+        )
+
+
+        // Register Button
+        CustomButton(
+            label = stringResource(id = R.string.register),
+            onClick = { registrationViewModel.onRegisterButtonClicked() },
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(
+                    top = 20.dp,
                     start = 30.dp,
                     end = 30.dp,
-                ),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            // Registration Title
-            Title(
-                modifier = Modifier.padding(bottom = 10.dp),
-                text = stringResource(id = R.string.create_account),
-            )
+                )
+        )
 
-            // Registration Description
-            Description(text = stringResource(id = R.string.create_account_description))
+        Spacer(modifier = Modifier.height(16.dp))
 
-            Spacer(modifier = Modifier.height(16.dp))
+        //Sign Up redirection
+        Redirection(
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+                .align(Alignment.Start),
+            text = stringResource(id = R.string.already_have_account_message),
+            onClick = { navController.navigate(Screen.LoginScreen) }
+        )
 
-            // Loading Indicator while processing registration request
-            if (registrationState.isLoading) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                ) {
-                    CircularProgressIndicator()
-                }
-            }
+        //Reset Password redirection
+        Redirection(
+            modifier = Modifier
+                .padding(16.dp)
+                .align(Alignment.Start),
+            text = stringResource(id = R.string.forgot_password_message),
+            onClick = { navController.navigate(Screen.ResetPasswordScreen) }
+        )
 
-            //Email TextField
-            EmailTextField(
-                modifier = Modifier.fillMaxWidth(),
-                email = registrationState.email,
-                emailErrorMessage = registrationState.emailErrorMessage,
-                onValueChange = { registrationViewModel.onEmailValueChanged(it) },
-                imeAction = ImeAction.Next
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Email Confirmation Text Field
-            EmailTextField(
-                modifier = Modifier.fillMaxWidth(),
-                label = stringResource(id = R.string.repeat_email),
-                email = registrationState.repeatEmail,
-                emailErrorMessage = registrationState.repeatEmailErrorMessage,
-                onValueChange = { registrationViewModel.onRepeatEmailValueChanged(it) },
-                imeAction = ImeAction.Next
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Password Text Field
-            PasswordTextField(
-                modifier = Modifier.fillMaxWidth(),
-                password = registrationState.password,
-                passwordErrorMessage = registrationState.passwordErrorMessage,
-                onValueChange = { registrationViewModel.onPasswordValueChanged(it) },
-                imeAction = ImeAction.Next,
-                showPassword = registrationState.showPassword,
-                onShowPasswordClicked = { registrationViewModel.onShowPasswordClicked() }
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Repeat Password Text Field
-            PasswordTextField(
-                modifier = Modifier.fillMaxWidth(),
-                label = stringResource(id = R.string.repeat_password),
-                password = registrationState.repeatPassword,
-                passwordErrorMessage = registrationState.repeatPasswordErrorMessage,
-                onValueChange = { registrationViewModel.onRepeatPasswordValueChanged(it) },
-                imeAction = ImeAction.Done,
-                showPassword = registrationState.showPassword,
-                onShowPasswordClicked = { registrationViewModel.onShowPasswordClicked() }
-            )
-
-
-            // Register Button
-            CustomButton(
-                label = stringResource(id = R.string.register),
-                onClick = { registrationViewModel.onRegisterButtonClicked() },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        top = 20.dp,
-                        start = 30.dp,
-                        end = 30.dp,
-                    )
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            //Sign Up redirection
-            Redirection(
-                modifier = Modifier
-                    .padding(horizontal = 16.dp)
-                    .align(Alignment.Start),
-                text = stringResource(id = R.string.already_have_account_message),
-                onClick = { navController.navigate(Screen.LoginScreen) }
-            )
-
-            //Reset Password redirection
-            Redirection(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .align(Alignment.Start),
-                text = stringResource(id = R.string.forgot_password_message),
-                onClick = { navController.navigate(Screen.ResetPasswordScreen) }
-            )
-
-        }
     }
 }
+

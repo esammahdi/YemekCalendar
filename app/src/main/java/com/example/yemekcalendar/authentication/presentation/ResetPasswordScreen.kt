@@ -2,11 +2,8 @@ package com.example.yemekcalendar.authentication.presentation
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,10 +24,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.yemekcalendar.R
+import com.example.yemekcalendar.authentication.presentation.components.BaseAuthenticationLayout
 import com.example.yemekcalendar.authentication.presentation.components.CustomButton
 import com.example.yemekcalendar.authentication.presentation.components.Description
 import com.example.yemekcalendar.authentication.presentation.components.EmailTextField
-import com.example.yemekcalendar.authentication.presentation.components.LanguageDropdownList
 import com.example.yemekcalendar.authentication.presentation.components.Redirection
 import com.example.yemekcalendar.authentication.presentation.viewmodel.ResetPasswordViewModel
 import com.example.yemekcalendar.core.other.navigation.Screen
@@ -73,102 +70,85 @@ fun ResetPasswordScreen(
         }
     }
 
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        contentAlignment = Alignment.TopStart
+    BaseAuthenticationLayout(
+        selectedLanguage = resetPasswordState.selectedLanguage,
+        onLanguageSelected =
+        { resetPasswordViewModel.onLanguageSelected(it) }
     ) {
-        LanguageDropdownList(
-            selectedLanguage = resetPasswordState.selectedLanguage,
-            onLanguageSelected = { resetPasswordViewModel.onLanguageSelected(it) }
+        //Login Title
+        Title(
+            modifier = Modifier.padding(bottom = 10.dp),
+            text = stringResource(id = R.string.reset_password),
         )
 
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 30.dp, end = 30.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+        Spacer(
+            modifier = Modifier.height(16.dp),
+        )
 
+        //Description
+        Description(
+            text = stringResource(id = R.string.reset_password_description)
+        )
 
-            //Login Title
-            Title(
-                modifier = Modifier.padding(bottom = 10.dp),
-                text = stringResource(id = R.string.reset_password),
-            )
-
-            Spacer(
-                modifier = Modifier.height(16.dp),
-            )
-
-            //Description
-            Description(
-                text = stringResource(id = R.string.reset_password_description)
-            )
-
-            //Loading indicator when resetting process is in progress
-            if (resetPasswordState.isLoading) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                ) {
-                    CircularProgressIndicator()
-                }
-            }
-
-            Spacer(
-                modifier = Modifier.height(16.dp)
-            )
-
-            //Email TextField
-            EmailTextField(
+        //Loading indicator when resetting process is in progress
+        if (resetPasswordState.isLoading) {
+            Row(
                 modifier = Modifier.fillMaxWidth(),
-                email = resetPasswordState.email,
-                emailErrorMessage = resetPasswordState.emailErrorMessage,
-                onValueChange = { resetPasswordViewModel.onEmailValueChanged(it) },
-                imeAction = ImeAction.Done
-            )
-
-            Spacer(
-                modifier = Modifier.height(16.dp)
-            )
-
-            //Reset Button
-            CustomButton(
-                label = stringResource(id = R.string.reset),
-                onClick = { resetPasswordViewModel.onResetButtonClicked() },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        top = 20.dp,
-                        start = 30.dp,
-                        end = 30.dp,
-                    )
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            //Login redirection
-            Redirection(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .align(Alignment.Start),
-                text = stringResource(id = R.string.already_have_account_message),
-                onClick = { navController.navigate(Screen.LoginScreen) }
-            )
-
-            //Registration redirection
-            Redirection(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .align(Alignment.Start),
-                text = stringResource(id = R.string.dont_have_account_message),
-                onClick = { navController.navigate(Screen.RegisterationScreen) }
-            )
-
+                horizontalArrangement = Arrangement.Center,
+            ) {
+                CircularProgressIndicator()
+            }
         }
+
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
+        //Email TextField
+        EmailTextField(
+            modifier = Modifier.fillMaxWidth(),
+            email = resetPasswordState.email,
+            emailErrorMessage = resetPasswordState.emailErrorMessage,
+            onValueChange = { resetPasswordViewModel.onEmailValueChanged(it) },
+            imeAction = ImeAction.Done
+        )
+
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
+        //Reset Button
+        CustomButton(
+            label = stringResource(id = R.string.reset),
+            onClick = { resetPasswordViewModel.onResetButtonClicked() },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    top = 20.dp,
+                    start = 30.dp,
+                    end = 30.dp,
+                )
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        //Login redirection
+        Redirection(
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+                .align(Alignment.Start),
+            text = stringResource(id = R.string.already_have_account_message),
+            onClick = { navController.navigate(Screen.LoginScreen) }
+        )
+
+        //Registration redirection
+        Redirection(
+            modifier = Modifier
+                .padding(16.dp)
+                .align(Alignment.Start),
+            text = stringResource(id = R.string.dont_have_account_message),
+            onClick = { navController.navigate(Screen.RegisterationScreen) }
+        )
+
     }
 }
