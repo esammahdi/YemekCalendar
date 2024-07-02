@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.example.yemekcalendar.ui.theme.RegularFont
 
 @Composable
@@ -28,6 +29,7 @@ fun Redirection(
             text = text,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.secondary,
+            fontSize = 14.sp,
             fontFamily = RegularFont
         )
     }
