@@ -158,8 +158,8 @@ fun DayGrid(
             LazyVerticalGrid(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 4.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+                    .padding(horizontal = 6.dp,),
+                verticalArrangement = Arrangement.spacedBy(2.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 columns = GridCells.Fixed(columns),
                 state = gridState
@@ -176,6 +176,7 @@ fun DayGrid(
                     items(days) { calendarDay ->
                         CalendarDayCard(
                             modifier = Modifier
+                                .padding(bottom = 10.dp)
                                 .aspectRatio(1f),
                             day = calendarDay,
                             onAddToCalendarClicked = {
