@@ -1,17 +1,11 @@
 package com.example.yemekcalendar.settings.presentation
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
@@ -26,7 +20,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -48,8 +41,8 @@ import com.example.yemekcalendar.R
 import com.example.yemekcalendar.core.other.navigation.Screen
 import com.example.yemekcalendar.core.presentation.components.Title
 import com.example.yemekcalendar.core.presentation.components.YemekCalendarDropdownList
+import com.example.yemekcalendar.settings.presentation.components.SettingsItem
 import com.example.yemekcalendar.settings.presentation.viewmodel.SettingsViewModel
-import com.example.yemekcalendar.ui.theme.RegularFont
 import com.example.yemekcalendar.ui.theme.YemekCalendarTheme
 
 @Composable
@@ -274,68 +267,7 @@ fun MockSettingsScreen(
     }
 }
 
-@Composable
-fun SettingsItem(
-    modifier: Modifier = Modifier,
-    leadingIcon: ImageVector,
-    title: String,
-    subtitle: String,
-    onClick: () -> Unit = {},
-    trailingContent: @Composable () -> Unit = {},
-) {
 
-    Box(
-        modifier = Modifier
-            .background(
-                MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f),
-                shape = MaterialTheme.shapes.large
-            )
-            .clickable { onClick() }
-            .padding(horizontal = 8.dp)
-            .sizeIn(minHeight = 100.dp),
-        contentAlignment = Alignment.Center
-
-    ) {
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-
-            Row {
-                Icon(
-                    modifier = Modifier.size(40.dp),
-                    imageVector = leadingIcon,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary
-                )
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Column {
-                    Text(
-                        text = title,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontFamily = RegularFont,
-                    )
-
-                    Text(
-                        text = subtitle,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.secondary,
-                        fontFamily = RegularFont,
-                    )
-                }
-            }
-
-            trailingContent()
-
-        }
-    }
-}
 
 
 
