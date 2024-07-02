@@ -6,7 +6,7 @@
         Redirecting to Login Screen…</string>
     <string name="logout_dialog_title">Logout Succefull</string>
     <string name="profile_screen_welcome_message">Welcome Back\n</string>
-    <string name="logout">Logout\n</string>
+    <string name="logout">Logout</string>
     <string name="ok">OK</string>
     <string name="profile_screen_title">Profile</string>
     <string name="settings_screen_title">Settings</string>
