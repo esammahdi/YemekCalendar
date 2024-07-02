@@ -22,6 +22,7 @@ import com.example.yemekcalendar.settings.presentation.viewmodel.Languages
 
 @Composable
 fun LanguageDropdownList(
+    modifier: Modifier = Modifier,
     selectedLanguage: Languages,
     onLanguageSelected: (Languages) -> Unit
 ) {
@@ -30,10 +31,9 @@ fun LanguageDropdownList(
     val languageIcon = ImageVector.vectorResource(id = R.drawable.outline_language_24)
 
     Row(
-        modifier = Modifier
+        modifier = modifier
             .wrapContentWidth()
-            .padding(4.dp)
-            .padding(top = 30.dp),
+            .padding(4.dp),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
