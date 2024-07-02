@@ -201,7 +201,6 @@ fun AboutScreen(navController: NavController) {
 
 @Composable
 fun DescriptionRow(label: String, content: String) {
-    // CustomTypography.kt or within the same file
     val LabelTextStyle = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.Bold,
