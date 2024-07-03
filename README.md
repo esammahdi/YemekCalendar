@@ -283,9 +283,8 @@ Known issues and limitations
 
      As of now, only gregorian calendar is supported. The dates are handled through unix-epoch time stamps, but the months list, date formatting, add event to calendar ..etc are coded with consideration for gregorian calendar only.
 
-- **Large Paddings in Topbars** :
-
-     Specially noticable in the sub-settings screens, theere is a large empty space above every appbar. But it is also there just in the whole app. Disabling `edgeToedge` support fixes it but that takes away an important feature. 
+- **System Bar Hidden** :
+     While enabling edgeToedge(), the top system bar dissapears (gets drawn over by the app) sometimes depending on the theme on some devices. And on others it just dissapears until a some system-theme is enabled on that device and then all the app themes will work jusst fine.
 
 - **Background Worker** :
 
