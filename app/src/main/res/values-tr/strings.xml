@@ -127,4 +127,12 @@
     <string name="calendar_event_insertion_success_message">Etkinlik Başarıyla Eklendi</string>
     <string name="no_items_in_category">Bu kategoride öğe bulunmamaktadır</string>
     <string name="no_item_in_category_message">Kategoriyi değiştirmeyi deneyin</string>
+    <string name="version">Versiyon</string>
+    <string name="firebase_database_url">"import android.app.Activity "</string>
+    <string name="gcm_defaultSenderId">"import android.content.BroadcastReceiver "</string>
+    <string name="google_api_key">"import android.content.Context "</string>
+    <string name="google_app_id">"import android.content.Intent "</string>
+    <string name="google_crash_reporting_api_key">"import android.content.IntentFilter "</string>
+    <string name="google_storage_bucket">"import android.content.pm.PackageManager "</string>
+    <string name="project_id">"import android.database.Cursor "</string>
 </resources>

@@ -127,4 +127,5 @@
     <string name="calendar_event_insertion_success_message">Event Added Succesfully</string>
     <string name="no_items_in_category">There are no items in this category</string>
     <string name="no_item_in_category_message">Try changing the category</string>
+    <string name="version">Version</string>
 </resources>

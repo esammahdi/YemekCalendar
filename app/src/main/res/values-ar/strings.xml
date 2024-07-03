@@ -127,4 +127,5 @@
     <string name="calendar_event_insertion_success_message">تمت إضافة الحدث بنجاح</string>
     <string name="no_items_in_category">لا توجد عناصر في هذه الفئة</string>
     <string name="no_item_in_category_message">حاول تغيير الفئة</string>
+    <string name="version">الإصدار</string>
 </resources>
