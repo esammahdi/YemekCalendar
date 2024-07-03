@@ -174,7 +174,10 @@ API Link Integration: Users can add a custom calendar source by providing an API
 - Settings menu includes a field for the user to provide an API link. 
 - Food menu data fetches through the given API, making it more adaptable and dynamic.
 - Online and Local DB Schemas will be changed to use an enum for MealType and FoodType.
-  
+
+*Language Support for Food Items:*
+  - As of now the language option only affects the app itself. The information from the online source you choose is not known and thus can not be translated. However, in the upcoming API based version, an optional `Food Items in Locale $locale ` is planned to be introduced. This will be an optional choice for the api provider. For example, if the initial language was English and you changed it to Arabic, the app will make a request to the API to get the food items in that language if available, if not, or if there is a connection problem it will use the default language the api provides instead. 
+    
 *Worker API:*
   - Schedules hourly data refreshes to ensure the latest information is available.
     
