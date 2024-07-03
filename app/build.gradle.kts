@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.yemekcalendar"
+    namespace = "com.esammahdi.yemekcalendar"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.yemekcalendar"
+        applicationId = "com.esammahdi.yemekcalendar"
         minSdk = 28
         targetSdk = 34
         versionCode = 1

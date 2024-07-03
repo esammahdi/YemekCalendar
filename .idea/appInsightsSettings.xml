@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.esammahdi.yemekcalendar" />
+                  <option name="mobileSdkAppId" value="1:414570444996:android:d98a16b567de9cda1b7191" />
+                  <option name="projectId" value="yemekcalendar-85ddc" />
+                  <option name="projectNumber" value="414570444996" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
