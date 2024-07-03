@@ -123,6 +123,7 @@ fun AboutScreen(navController: NavController) {
             DescriptionRow(label = stringResource(R.string.author), content = "Esameldin Bashir")
             DescriptionRow(label = stringResource(R.string.year), content = "2024")
             DescriptionRow(label = stringResource(R.string.license), content = "MIT License")
+            DescriptionRow(label = stringResource(R.string.version), content = "1.0")
 
             Spacer(modifier = Modifier.height(16.dp))
 
