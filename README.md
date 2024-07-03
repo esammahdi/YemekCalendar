@@ -220,6 +220,48 @@ However, in the next version of the app it is planned for the app to be API base
 
 Usage
 ------
+## **_To Be Updated_**
+
+### Five types of calendar cards:
+
+<table>
+  <tr>
+    <td style="text-align: center; padding: 10px;">
+      <h5>Normal Day Card</h5>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <h5>Updated Day Card</h5>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <h5>Weekend Day Card</h5>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <h5>Special Holiday Day Card</h5>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <h5>Canceled Day Card</h5>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center; padding: 10px;">
+      <img src="readme_resources/screenshots/Normal_Card.png" alt="Normal Day Card" width="150"/>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <img src="readme_resources/screenshots/Updated_Card.png" alt="Updated Day Card" width="150"/>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <img src="readme_resources/screenshots/Weekend_Card.png" alt="Weekend Day Card" width="150"/>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <img src="readme_resources/screenshots/Holiday_Card.png" alt="Special Holiday Day Card" width="150"/>
+    </td>
+    <td style="text-align: center; padding: 10px;">
+      <img src="readme_resources/screenshots/Canceled_Card.png" alt="Canceled Day Card" width="150"/>
+    </td>
+  </tr>
+</table>
+
+
 
 Known issues and limitations
 ----------------------------
