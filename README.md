@@ -261,6 +261,12 @@ Known issues and limitations
 
 ### Screen Specific Issues
 
+- **Registration and Reset Password Screens** : 
+
+  Upon succufull registraion or resetting a password, a confirmation dialog shows up. It then automatically redirects the user to the logging page.
+
+  The problem is that the dialog only dissapears after the page in the back already changed to the login page. This behavior leaves a bad UX. The desired outcome is for the navigation process to happen only after the dialog dissapears.
+  
 - **CalendarScreen** :
   * No Language support other than the online-source provided one : While the rest of the app support other languages the food items names are gotten from the online db directly and thus have no translation to other languages. To fix this, the entire schema of the database needs to be altered, in a way that makes every source have multiple food items lists, one list for each locale (e.g: food_items_en, food_items_tr ..etc). But this is too bothersome and thus have been left for the next version of the app which is planned to be API based.  
   * When refreshing the data through pull-refresh, the loading screen only waits for the instiutions list to load since the calendar day items require some time to load so at first the shimmer loading screen lifted but the page shows the 'No Calendar For this Month' message sine there are no items in the list yet. It takes some seconds until the items are loaded. The appropriate behavior is for the loading screen to continue until the calendar day items are loaded.
@@ -287,6 +293,12 @@ Authors and history
 
 Acknowledgments
 ---------------
+* [Placeholder]() : For the initial code of the authentication feature. 
 * [ Abdellah Ibn El Azraq (BBlueCoder) ](https://github.com/BBlueCoder/ViDown/tree/master) : His article about using Hilt with was realy helpfull. I also modeled some parts of the readme file after his project's readme file. 
 * [Logo.com](https://logo.com/) : Used to design the application logo as well as some other logos for the readme file.
 * [Previewed](https://previewed.app/) : Used to design the screenshots previews above.
+* Icons :
+   - [Placeholder]() for the appearance icon in the Settings Screen.
+   - [Placeholder]() for the WeekEnd Day Card illustration.
+   - [Placeholder]() for the SpecialHoliday Day Card illustration.
+   - [Placeholder]() for the Canceled Day Card illustration.
