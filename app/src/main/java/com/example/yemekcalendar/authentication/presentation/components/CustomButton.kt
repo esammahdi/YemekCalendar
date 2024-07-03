@@ -20,10 +20,6 @@ fun CustomButton(
     Button(
         onClick = { onClick() },
         modifier = modifier,
-//        colors = ButtonDefaults.buttonColors(
-//            containerColor = Color.Black,
-//            contentColor = Color.White,
-//        ),
         shape = RoundedCornerShape(15.dp)
     ) {
         Text(
