@@ -184,6 +184,10 @@ API Link Integration: Users can add a custom calendar source by providing an API
 *Notifications:*
   - Notifications for data change events when the app is in the background
 
+*Improved Themes:*
+  - Some of the current themes have problems. They will be fixed along with introducing new themes.
+    
+
 Architecture
 ------------
 
