@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/esammahdi/YemekCalendar/" target="_blank" rel="noreferrer"> <img src="readme_resources/ycal_logo.svg" alt="yemek calendar logo" width="400" height="300"/> </a>  
+<a href="https://github.com/esammahdi/YemekCalendar/" target="_blank" rel="noreferrer"> <img src="readme_resources/ycalendar-logo.png" alt="yemek calendar logo" width="400" height="300"/> </a>  
 </p>
 
 # YemekCalendar
