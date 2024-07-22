@@ -88,7 +88,7 @@ class LocalUserRepositoryImpl @Inject constructor(
     // =================================== Theme Mode ==========================================================
     override suspend fun getThemeMode(): ThemeMode {
         val themeMode = dataStore.data.first()[THEME_MODE]
-        return ThemeMode.fromString(themeMode) ?: ThemeMode.SYSTEM
+        return ThemeMode.fromString(themeMode) ?: ThemeMode.LIGHT
     }
 
     override suspend fun getThemeModeFlow(): Flow<ThemeMode> {
