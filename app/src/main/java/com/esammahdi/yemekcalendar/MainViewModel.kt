@@ -70,7 +70,7 @@ class MainViewModel @Inject constructor(
 
 data class MainState(
     val theme: AppTheme = AppTheme.DEFAULT,
-    val themeMode: ThemeMode = ThemeMode.SYSTEM,
+    val themeMode: ThemeMode = ThemeMode.LIGHT,
     val isDynamicColor: Boolean = false,
     val isUserSignedIn: Boolean = false
 )
