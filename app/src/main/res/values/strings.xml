@@ -124,7 +124,7 @@
     <string name="theme_disabled">Disabled</string>
     <string name="no_food_served_this_month_message">This item is not served in this month.</string>
     <string name="description">Jetpack Compose-based application for displaying monthly food menus of selected institutions. Features include predefined custom themes, Material You dynamic theming, and multilingual support (Turkish, English, Arabic). Built with a \"Local First\" approach for offline functionality, Firebase integration for real-time updates and storage, and various user experience enhancements. For more information, visit the github link.</string>
-    <string name="calendar_event_insertion_success_message">Event Added Succesfully</string>
+    <string name="calendar_event_insertion_success_message">Event Added Successfully</string>
     <string name="no_items_in_category">There are no items in this category</string>
     <string name="no_item_in_category_message">Try changing the category</string>
     <string name="version">Version</string>
