@@ -93,7 +93,7 @@ class LocalUserRepositoryImpl @Inject constructor(
 
     override suspend fun getThemeModeFlow(): Flow<ThemeMode> {
         return dataStore.data.map { preferences ->
-            val themeMode = preferences[THEME_MODE] ?: ThemeMode.SYSTEM.name
+            val themeMode = preferences[THEME_MODE] ?: ThemeMode.LIGHT.name
             ThemeMode.valueOf(themeMode)
         }
     }
